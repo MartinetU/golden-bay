@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 
 import Promotion from './components/Promotion'; // ← сюда импорт
 import Fragments from './components/Fragments';
+import Motivation from './components/Motivation';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 	  
 	  <Promotion /> {/* ← сюда рендер */}
 	  <Fragments />
+	  <Motivation />
 
       <Footer />
     </div>

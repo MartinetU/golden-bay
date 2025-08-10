@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+Вот черновик `README.md` для текущего состояния проекта. Его можно класть в корень (`/golden-bay/README.md`) и обновлять по мере роста.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Golden Bay: Pirate Quest — учебный SPA
 
-In the project directory, you can run:
+Учебный React-проект, визуально повторяющий локальный XAMPP-вариант и предназначенный для практики **props**, **хуков** и постепенного перехода к **роутингу**.
 
-### `npm start`
+## Запуск
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Версии
 
-### `npm test`
+* React: 19.1.0 (из `package.json` у тебя локально)
+* Dev-сервер: CRA/Vite-подобный (локальный `npm start`)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Структура (по факту загруженных файлов)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+public/
+  images/           # статические изображения, доступные как /images/...
+src/
+  assets/
+    style.css       # глобальные стили "нулёвка" + старые классы (cover, и т.п.) :contentReference[oaicite:0]{index=0}
+  components/
+    Header.jsx      # шапка + локальные стили Header.css (темно-синий фон меню) 
+    HeroSection.jsx # обложка/герой, тянет классы из assets/style.css (cover...) 
+    Promotion.jsx   # промо-блок + локальные стили Promotion.css :contentReference[oaicite:3]{index=3}
+    Fragments.jsx   # карточки с картинками из /public/images (treasure{id}.jpg) 
+    Footer.jsx      # футер, вложенный FooterMenu, кнопка "Наверх" + Footer.css 
+  App.jsx           # сборка страницы: Header → Hero → Promotion → Fragments → Footer 
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Доп. стили:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* `Header.css` — локальные стили хедера (добавлен синий фон полосы меню/хедера).
+* `Promotion.css` — стили промо-секции (фон, адаптив, типографика).&#x20;
+* `Footer.css` — стили футера (flex-колонки, кнопка-ссылка).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Компоненты
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### App.jsx
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Собирает главную страницу; подключает глобальные стили `./assets/style.css`. Текущая последовательность:
+`Header` → `HeroSection` → `Promotion` → `Fragments` → `Footer`.
+Учебный блок `MainContent2` временно закомментирован.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Header.jsx (+ Header.css)
 
-## Learn More
+* Лого: «Golden Bay: Pirate Quest 2.0».
+* Горизонтальное меню: «Главная», текстовые пункты «Обзор», «Политика конфиденциальности», «Контакты» (якорь на `#page-footer`).
+* Комментарии в JSX приведены к формату `{/* ... */}`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**План расширения:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Перевести пункты на `<Link>` после внедрения роутинга.
+* Вынести пункты меню в `props` (массив), добавить бургер-состояние в `useState`/`useReducer`.
 
-### Code Splitting
+### HeroSection.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Разметка героя: `<section className="cover">` + контентные блоки `.subtitle`.
+* Сейчас стили и фон обложки приходят из глобального `assets/style.css` (XAMPP-наследие).
 
-### Analyzing the Bundle Size
+**План:** создать `HeroSection.css`, перенести нужные правила (в т.ч. обложку) и отвязаться от глобалки.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Promotion.jsx (+ Promotion.css)
 
-### Making a Progressive Web App
+* Секция с заголовком, вводным абзацем и списком преимуществ.&#x20;
+* Локальные стили: светлый фон, адаптивная типографика.&#x20;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**План учебных доработок:**
 
-### Advanced Configuration
+* Вариант с **props**: `title`, `intro`, `benefits` (массив).
+* Вариант с **useState**: «Показать больше/меньше» (разворот части списка).
+* Вынести тексты в `src/data/promotion.js` (будущая многостраничность через роутинг).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Fragments.jsx (+ Fragments.css)
 
-### Deployment
+* Рендер карточек по массиву фрагментов; картинки берутся из `public/images` по пути `"images/treasure${item.id}.jpg"`.
+* Эффект «приседания» карточек реализован через `transform` + `transition` (сейчас scale на `:hover`).&#x20;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**План:**
 
-### `npm run build` fails to minify
+* Превратить массив данных в `props`, добавить `useState` для активной карточки / модального окна.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Footer.jsx (+ Footer.css)
+
+* Вложенный `FooterMenu` (локальный компонент в том же файле).
+* Колонки: название/копирайт, меню, контакты.
+* Кнопка «Наверх» с `window.scrollTo({ behavior: 'smooth' })`.
+* Стили: flex-раскладка, цветовая схема, готовый класс `.link-button` (пока не используется).
+
+**План:**
+
+* Перевести пункты на `<Link>` после роутера.
+* Опционально: скрывать/показывать кнопку «Наверх» на скролле (учебный `useEffect`).
+
+---
+
+## Стили и ассеты
+
+* **Глобальные стили**: `src/assets/style.css` — временная «нулёвка» + унаследованные классы (например, `.cover`), от которых постепенно уходим в локальные.&#x20;
+* **Локальные стили**: `Header.css`, `Promotion.css`, `Footer.css` — подключаются из соответствующих компонентов.
+* **Картинки**:
+
+  * Обложки (2 шт.) — в `src/covers/` (импортом, когда дойдём до HeroSection.css).
+  * Контентные — в `public/images/`, доступ по `src="images/..."; url('/images/...')`.
+
+---
+
+## Дорожная карта (коротко)
+
+1. **Главная**: довести `Promotion` и `Fragments` до учебных вариантов с `props` и `useState`.
+2. **HeroSection**: вынести стили в `HeroSection.css`, убрать автозамену обложки из глобалки.
+3. **Роутинг**: `Home` (`/`) и `Review` (`/review`) + `Policy` (`/policy`), заменить `<a>` на `<Link>`.
+4. **Унификация**: вынести тексты в `src/data/*`, цвета — в CSS-переменные.
+5. **Учебные компоненты**: `MainContent2`, `HotDivider/HorDivider`, `PopUp2` — площадка для хуков (state/effect/ref/reducer).
+
+---
+
+## Примечания
+
+* В `Header` надпись: «Golden Bay: Pirate Quest 2.0» — пометка для ориентира (можно позже вернуть исходное название).
+* Якорь `#page-footer` работает, т.к. у футера есть `id="page-footer"`.
+* Глобальный фон хедера ранее перекрывал локальный — решено локальным правилом `header { background-color: #002b80; }` в `Header.css` (подтверждено визуально).
+
+---
+
+Хочешь, я сразу подготовлю минимальные диффы для варианта **Promotion с props** и **Promotion с useState** (два небольших коммита), чтобы было что положить в твою «справочную» ветку?

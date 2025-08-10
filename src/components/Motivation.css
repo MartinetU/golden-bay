@@ -1,0 +1,79 @@
+.motivation {
+  padding: 40px 20px;
+  background-color: #FFF8E7;
+}
+
+.motivation__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* текстовая колонка */
+.motivation__text {
+  flex: 1;
+  max-width: 600px;
+  order: 1;
+}
+
+.motivation__header {
+  font-size: 1.25rem;
+  color: #005188;
+  margin-bottom: 10px;
+}
+
+.motivation__subheader {
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.motivation__paragraph {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.motivation__intro {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.motivation__list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* колонка с картинкой */
+.motivation__image {
+  flex: 1;
+  max-width: 500px;
+  order: 2;
+}
+
+.motivation__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* модификатор на будущее: реверс */
+.motivation--reversed .motivation__text { order: 2; }
+.motivation--reversed .motivation__image { order: 1; }
+
+/* мобильная адаптация */
+@media (max-width: 768px) {
+  .motivation__content { flex-direction: column; }
+  .motivation__text,
+  .motivation__image { max-width: 100%; }
+  .motivation h2 { font-size: 1.25rem; }
+  .motivation h4 { font-size: 1rem; }
+}
