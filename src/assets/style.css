@@ -1,0 +1,688 @@
+/* Общие стили */
+html {
+	font-size: 16px; 
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #DDF2F0;
+    color: #2F2F2F;
+}
+
+/* Хедер */
+header {
+    background-color: #005188;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+header .logo {
+    font-size: 1.25rem; /* 20px */
+    font-weight: bold;
+    color: #ffd651;	/*#FFA3FF;	*/
+	margin-right: auto; 
+	
+}
+
+header .hamburger {
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    display: none;
+	margin-left: 20px;
+}
+
+
+header .desktop-menu {
+    display: flex;
+    gap: 1.25rem; 
+}
+
+/* menu item */
+header .desktop-menu  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem; /* 16px */
+    font-weight: normal; 
+    transition: color 0.3s; 
+}
+
+/* active */
+header .desktop-menu  a:hover {
+    color: #FFDD44; 
+}
+
+
+/* mob menu */
+.mobile-menu {
+    display: none; 
+    flex-direction: column; 
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    width: 100%; 
+    background-color: #11484c; 
+    padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.mobile-menu a {
+	display: block; 
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.25rem; /* 20px */
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.mobile-menu a:hover {
+    background-color: #2359FF; 
+}
+
+/* Активное меню */
+.mobile-menu.active {
+    display: flex; 
+}
+
+.hamburger {
+	font-size: 1.5rem; /* Size */
+    cursor: pointer; 
+    color: #FFFFFF; 
+}
+
+/* active color */
+.hamburger.active {
+    color: #FFDD44; 
+}
+
+/* all */
+section {
+    text-align: center;
+}
+
+
+/* basic cover */
+.cover {
+  min-height: 100vh;
+  background-image: url('../covers/piratecoast04.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-top: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.cover h1 {
+	color: #fff8e7; 
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65); 
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 1rem;
+  max-width: 90%;
+  
+}
+
+.cover__spacer {
+  height: 340px;
+}
+
+.cover__content {
+  max-width: 700px;
+  padding: 0 1rem;
+  background-color: rgba(0, 0, 0, 0.4); 
+  border-radius: 8px;
+}
+
+.cover__content .subtitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cover__content p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.cover img {
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.cover_view {
+  background-image: url('../covers/piratecoast03.jpg');
+}
+
+/* mobile device */
+@media (max-width: 768px) {
+  .cover {
+    background-position: center center;
+  }
+
+    .cover .subtitle {
+        font-size: 1rem; /* 16px */
+    }
+
+    .cover p {
+        font-size: 0.875rem; /* 14px */
+    }
+
+ .cover h1 {
+    font-size: 1.5rem;
+  }
+
+  .cover__content {
+    max-width: 90%;
+  }
+
+  .cover__spacer {
+    height: 200px;
+  }
+}
+
+/* section-button*/
+.transition_inside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; 
+  background-color: #E1FEFF; 
+  border: 1px solid #ddd;
+  margin: 10px 0; 
+}
+
+/* Стили кнопки */
+.transition_inside__button {
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #29466C; 
+  border: none;
+  border: 3px solid #009b9e; 
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transition_inside__button:hover {
+  background-color: #003cbf; 
+}
+
+/* Promotion Section */
+.promotion {
+    background-color: #B0C4DE; 
+    padding: 2rem; 
+    border-radius: 8px; 
+}
+
+.promotion h2 {
+    color: #A75A2D;	
+    font-size: 1.25rem;
+    text-align: center; 
+    margin-bottom: 1rem; 
+}
+
+.promotion .intro {
+	color: #A75A2D;	
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.promotion p {
+    color: #000000;
+	font-size: 1.125rem; 
+    margin-bottom: 1rem; 
+    text-align: center; 
+}
+
+.promotion ul {
+    font-size: 1rem; 
+    color: #37474f; 
+    margin: 0 auto; 
+    max-width: 600px; 
+    padding-left: 20px; 
+}
+
+.promotion ul li {
+    margin-bottom: 0.75rem;
+	/*font-weight: bold;*/
+}
+
+@media (max-width: 768px) {
+    .promotion {
+        padding: 1rem; 
+        border-radius: 5px; 
+        text-align: center; 
+    }
+
+	.promotion .intro {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+    .promotion h2 {
+        font-size: 1em; 
+        margin-bottom: 0.75em; 
+    }
+
+    .promotion p {
+        font-size: 1rem; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .promotion ul {
+        font-size: 0.9rem; 
+        max-width: 100%; 
+        padding-left: 10px; 
+    }
+
+    .promotion ul li {
+		font-size: 1rem;
+        margin-bottom: 0.4rem; 
+    }
+}
+
+/* fragments */
+.fragments {
+    background-color: #E1FEFF;
+    padding: 2rem;
+    text-align: center;
+}
+
+.fragments h2 {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.fragments p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.fragment-container {
+    background-color: #e9fbff;
+	display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fragment {
+    width: 30%;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.fragment img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.fragment h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem 0;
+    color: #009b9e;
+}
+
+.fragment p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5rem;
+}
+
+.annotation {
+    font-size: 0.9em;
+    color: #666;
+    background: #f8f8f8;
+    padding: 5px;
+    /*border-left: 3px solid #bbb;*/
+    font-style: italic;
+    margin: 5px 0;
+}
+
+
+/* media fragment */
+@media (max-width: 768px) {
+    .fragment-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .fragment {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .fragment img {
+        border-radius: 8px;
+    }
+
+    .fragments h2 {
+        font-size: 1rem;
+    }
+
+    .fragments p {
+        font-size: 1rem;
+    }
+
+    .fragment h3 {
+        font-size: 1.125rem;
+    }
+
+    .fragment p {
+        font-size: 0.9rem;
+    }
+}
+
+/* basis_game*/
+.basis_game {
+  /*margin: 40px 0;*/
+  padding: 20px;
+  background-color: #B0C4DE;
+  border: 1px solid #ddd;
+  /*font-weight: normal;*/
+}
+
+/* Заголовок секции */
+.basis_game h2 {
+  font-size: 1.5rem;
+  color: #00737C;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Подзаголовок секции */
+.basis_game h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Статьи */
+.basis_game__article {
+  margin-bottom: 20px;
+}
+
+/* Подзаголовок статьи */
+.basis_game__article h4 {
+  font-size: 1.25rem;
+  color: #00737C;
+  margin-bottom: 5px;
+}
+
+/* Текст статьи */
+.basis_game__article p {
+  font-size: 1rem;
+  color: #333;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.basis_game .game-lore {
+    font-size: 1.125rem;
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 10px;
+}
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .basis_game {
+    padding: 15px;
+  }
+
+  .basis_game h2 {
+    font-size: 1rem;
+  }
+
+  .basis_game h3 {
+    font-size: 1.25rem;
+  }
+
+  .basis_game__article h4 {
+    font-size: 1.1rem;
+  }
+
+  .basis_game__article p {
+    font-size: 0.9rem;
+	width: 100%;
+  }
+}
+
+/*  motivation*/
+.motivation {
+  padding: 40px 20px;
+  background-color: #FFF8E7;
+}
+
+.motivation__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  align-items: center;
+  justify-content: space-between; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* one-text */
+.motivation__text {
+  flex: 1;
+  max-width: 600px;
+  order: 1;
+}
+
+.motivation__header {
+  font-size: 1.25rem;
+  color: #005188; 
+  margin-bottom: 10px;
+}
+
+.motivation__subheader {
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.motivation__paragraph {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.motivation__intro {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.motivation__list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* two-image */
+.motivation__image {
+  flex: 1;
+  max-width: 500px;
+  order: 2;
+}
+
+.motivation__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.motivation--reversed .motivation__text {
+  order: 2; 
+}
+
+.motivation--reversed .motivation__image {
+  order: 1; 
+}
+
+/* mobil */
+@media (max-width: 768px) {
+  .motivation__content {
+    flex-direction: column;
+  }
+
+  .motivation__text,
+  .motivation__image {
+    max-width: 100%;
+  }
+  
+  .motivation h2 {
+    font-size: 1.25rem;
+  }
+  
+  .motivation h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Общие стили футера */
+.footer {
+  background-color: #005188;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00d4cc;
+}
+
+.footer-line {
+  width: 50%; 
+  margin: 0 auto; 
+  border: 0;
+  height: 1px;
+  background-color: #00d4cc;
+  margin-bottom: 1rem; 
+}
+
+.footer-space {
+  height: 1rem; 
+}
+
+.footer-columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column p {
+  margin: 0;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+.footer-column h3 {
+  font-size: 1.15rem;
+  color: #00d4cc;
+  margin-bottom: 1rem;
+}
+
+.footer .footer-game {
+    color: #ffd651;
+}
+
+.footer-column a {
+  color: #00d4cc;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* mobil-footer */
+@media (max-width: 768px) {
+ 
+  .footer-columns {
+	font-size: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-column {
+    text-align: left;
+  }
+
+  .footer-line {
+    width: 70%; 
+  }
+}
+
+
+.back-to-top {
+  display: inline-block; 
+  background-color: #004588; 
+  color: #fff; 
+  border: solid; 
+  border-radius: 15px; 
+  padding: 10px 20px; 
+  font-size: 0.75rem; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.back-to-top:hover {
+  background-color: #cc8400; 
+}
+
+/* mobil-top  */
+@media (max-width: 768px) {
+	.desktop-menu {
+        display: none; 
+	}
+	
+	header .logo {
+		font-size: 1.15rem;
+    }
+	
+    header .hamburger {
+        display: block; 
+    }
+	
+	header .desktop-menu {
+        display: none;
+    }
+
+}
+

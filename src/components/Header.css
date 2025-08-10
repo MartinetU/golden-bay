@@ -1,0 +1,40 @@
+/* Header.css — локальные стили для верхнего меню */
+
+header {
+  background-color: #282c34;
+  padding: 1rem;
+  color: white;
+}
+
+header .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Фон строки меню — тёмно-синий */
+.desktop-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  background-color: #002b80 !important;
+  /*background-color: #001f4d; /* тёмно-синий */
+  padding: 0.5rem 1rem;
+}
+
+.desktop-menu a,
+.desktop-menu span {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.desktop-menu a:hover,
+.desktop-menu span:hover {
+  text-decoration: underline;
+}
+
+/* Закрашиваем весь header в тёмно-синий */
+header {
+  background-color: #002b80;
+}

@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-left .logo {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .link-button {
+    background: none;
+    border: none;
+    color: #61dafb;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+  
+  .link-button:hover {
+    text-decoration: underline;
+  }
+  

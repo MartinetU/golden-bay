@@ -1,0 +1,67 @@
+/* Fragments.css */
+
+.fragments {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.fragments h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fragments p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.fragment-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fragment {
+  width: 300px;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.fragment:hover {
+  transform: scale(1.03);
+}
+
+.fragment img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.fragment h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.fragment p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+.annotation {
+    font-size: 0.9em;
+    color: #666;
+    background: #f8f8f8;
+    padding: 5px;
+    /*border-left: 3px solid #bbb;*/
+    font-style: italic;
+    margin: 5px 0;
+}
